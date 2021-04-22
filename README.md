@@ -1,13 +1,8 @@
-# Wrangle-OpenStreetMap-Data-in-Mesa-Gilbert-AZ
+The below outlines the files that are contained in this repository:
 
-###Author: Andrew Marksberry
-
-This map is of my current home and I have lived here for 2 years and feel like I know the area well.  I am interested to see the data that is contained in OpenStreetMap.org and am hoping to assist with making the data better.
-
-[https://www.openstreetmap.org/export#map=12/33.3284/-111.6589](https://www.openstreetmap.org/export#map=12/33.3284/-111.6589)
-
-#Part 1: Problems Encountered in the Map
-
-Abbreviated street types
-Postal code length
-Phone number format
+•	All question data can be found in the "Wrangle OpenStreetmap Data for Mesa.pdf" file.
+•	The "audit.py" file checks for errors in the street type, postal code, and phone number and fixes the formatting.
+•	The "data.py" file crunches the corrected data and exports the data into csv files
+•	The "OpenStreetMaps.db" is the db used.
+•	The "Create_Tables and Add Data.py" file creates the necessary tables in the database and addes the row data into each table.
+•	The "SQL Data.py" runs all sql queries inside python using SQLite to get the requests data.
