@@ -9,3 +9,7 @@ The below outlines the files that are contained in this repository:
 •	The "Create_Tables and Add Data.py" file creates the necessary tables in the database and addes the row data into each table.
 
 •	The "SQL Data.py" runs all sql queries inside python using SQLite to get the requests data.
+
+•	The "Sample.py" file is the code I used to process the sample.osm file.
+
+•	The MesaSample.osm" file is the sample data requested.
