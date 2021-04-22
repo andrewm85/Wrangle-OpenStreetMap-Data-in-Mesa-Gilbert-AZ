@@ -93,6 +93,13 @@ def update_postcode(postcode):
 def is_postcode(elem):
     return (elem.attrib['k'] == 'addr:postcode')
 
+def audit_v(is_cafe, tag):
+    '''Audit v attribute and return value'''
+
+    v = tag.attrib['v']
+
+    return v
+
 #Initial audit function    
 def audit():
     for event, elem in ET.iterparse(osmfile, events=("start",)):
@@ -104,20 +111,6 @@ def audit():
                     audit_phone_number(phone_numbers, tag.attrib['v'])
                 if is_postcode(tag):
                     tag.attrib['v'] = update_postcode(tag.attrib['v'])
-
-def process_map(file_in, pretty = False):
-    file_out = "{0}.json".format(file_in)
-    data = []
-    with codecs.open(file_out, "w") as fo:
-        for _, element in ET.iterparse(file_in):
-            el = audit(element)
-            if el:
-                data.append(el)
-                if pretty:
-                    fo.write(json.dumps(el, indent=2)+"\n")
-                else:
-                    fo.write(json.dumps(el) + "\n")
-    return data
-
+                    
 if __name__ == "__main__":
     audit()
